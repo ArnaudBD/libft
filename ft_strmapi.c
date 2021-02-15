@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/15 08:27:57 by abiju-du          #+#    #+#             */
+/*   Updated: 2021/02/15 08:28:04 by abiju-du         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdlib.h>
 #include "libft.h"
@@ -29,16 +41,4 @@ char	fonction_test(unsigned int nb, char c)
 	c = c + 32;
 	d = nb + 7;
 	return (c);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	char const test[] = "CECI EST UN EXEMPLE";
-
-	printf("%s \n", ft_strmapi(test, &fonction_test));
-
-	return (0);
-
 }

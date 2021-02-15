@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/15 08:27:28 by abiju-du          #+#    #+#             */
+/*   Updated: 2021/02/15 08:27:30 by abiju-du         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdlib.h>
 #include "libft.h"
-
-#include <stdio.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -34,15 +44,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[len] = 0;
 
 	return (str);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	char const prefixe[] = "";
-	char const suffixe[] = "est un test";
-	printf("%s \n", ft_strjoin(prefixe, suffixe));
-
-	return (0);
 }

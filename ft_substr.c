@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/15 08:23:36 by abiju-du          #+#    #+#             */
+/*   Updated: 2021/02/15 08:23:40 by abiju-du         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdlib.h>
 #include "libft.h"
@@ -34,15 +46,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[j] = 0;
 
 	return (str);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	char string[] = "Ceci n'est pas un test.";
-
-	printf("%s", ft_substr(string, 'a', 8));
-
-	return (0);
 }

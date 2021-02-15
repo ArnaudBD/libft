@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/15 08:24:30 by abiju-du          #+#    #+#             */
+/*   Updated: 2021/02/15 08:25:25 by abiju-du         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include "libft.h"
 
@@ -7,16 +19,4 @@ int		ft_isdigit(int c)
 		return (1);
 	else
 		return (0);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	char test;
-	test = '0';
-	if(ft_isdigit(test) == 0)
-		printf("It is not a digit");
-	else
-		printf("It is a digit");
 }

@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/15 08:25:35 by abiju-du          #+#    #+#             */
+/*   Updated: 2021/02/15 08:25:38 by abiju-du         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdlib.h>
 #include "libft.h"
-
-#include <stdio.h>
 
 int		int_len(int n)
 {
@@ -53,16 +63,4 @@ char	*ft_itoa(int n)
 
 	return (str);
 
-}
-#include <stdio.h>
-
-int		main(void)
-{
-	int test;
-
-	test = -1200;
-
-	printf("%s \n", ft_itoa(test));
-
-	return (0);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/15 08:26:50 by abiju-du          #+#    #+#             */
+/*   Updated: 2021/02/15 08:26:52 by abiju-du         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include "libft.h"
 
@@ -14,13 +26,4 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 
 	write(fd, "\n", 1);
-}
-
-int		main()
-{
-	char test[] = "Pas mal comme petit test, non?";
-
-	ft_putendl_fd(test, 1);
-
-	return (0);
 }

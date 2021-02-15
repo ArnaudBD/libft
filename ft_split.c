@@ -1,9 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/02/12 10:11:28 by abiju-du          #+#    #+#             */
+/*   Updated: 2021/02/12 10:18:33 by abiju-du         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdlib.h>
 #include "libft.h"
 
 #include <stdio.h>
 
+int		freedom(char **tab)
+{
+	
+}
 
 int		nb_words(char const *s, char c)
 {
@@ -85,8 +101,8 @@ char	**ft_split(char const *s, char c)
 	while (j < nb_words(s, c))
 	{
 		while (next_cut(&s[i], c) != 0 && s[i] != 0)
-		{			i++;
-		}
+			i++;
+
 		if (s[i] == c || s[i] == 0)
 		{
 			if (!(tab[j] = malloc(sizeof(char) * next_cut(&s[i], c)  + 1)))
