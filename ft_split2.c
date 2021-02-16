@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:11:28 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/16 14:02:31 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/16 17:15:15 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,13 @@ int		next_cut(char const *s, char cut)
 	int		i;
 
 	i = 0;
-
-	if (i == cut)
+	if (s[i] == cut && s[i + 1] == cut)
 		i++;
 
 	while (s[i] != cut && s[i] != 0)
 			i++;
 
-printf("next_cut:\n*s = %s\ns[%d] : %c = %d\n\n\n", s, i, s[i], s[i]);
+printf("next_cut:\n*s = |%s|\ns[%d] : %c = %d\n\n\n", s, i, s[i], s[i]);
 
 	return (i);
 }
@@ -84,7 +83,7 @@ printf("s[i] : %c = %d\n", s[i], s[i]);
 		}
 		else
 		{
-printf("(else1)s[i] : %c\n", s[i]);	
+//printf("(else1)s[i] : %c\n", s[i]);	
 //printf("k =: %d\n", k);	
 			tab[j][k] = 0;
 //printf("tab[j][k] : %c = %d\n", tab[j][k], tab[j][k]);	
@@ -124,27 +123,27 @@ printf("MALLOC %d + 1\n\n\n", nb_words(s, c));
 	if (!(tab = malloc(sizeof(char*) * (nb_words(s, c) + 1))))
 		return (NULL);
 
-printf("MALLOC %d + 1 sur j =  %d\n\n\n", next_cut(s + i, c), j);
-		if (!(tab[j] = malloc(sizeof(char) * next_cut(s + i + 1, c) + 1)))
-		{
-			freedom(tab, j);
-			return NULL;
-		}
+//printf("MALLOC %d + 1 sur j =  %d\n\n\n", next_cut(s + i, c), j);
+//		if (!(tab[j] = malloc(sizeof(char) * next_cut(s + i + 1, c) + 1)))
+//		{
+//			freedom(tab, j);
+//			return NULL;
+//		}
 
 	while (s[i] != 0)
 	{
 printf("				s[%d] = %c\n", i, s[i]);
 		if (s[i] == c)
 		{
-			i++;
-			j++;
 printf("				_s[%d] = %c\n", i, s[i]);
-printf("MALLOC %d + 1 sur j = %d\n\n\n", next_cut(s +i, c), j);
-			if (!(tab[j] = malloc(sizeof(char) * next_cut(s + i, c) + 1)))
+printf("MALLOC %d + 1 sur j = %d\n\n\n", next_cut(s + i, c), j);
+			if (!(tab[j] = malloc(sizeof(char) * (i - pre) + 1)))
 			{
 //				freedom(tab, j);
 				return NULL;
 			}
+			pre = i;
+			j++;
 		}
 		i++;
 	}
@@ -158,7 +157,7 @@ printf("MALLOC %d + 1 sur j = %d\n\n\n", next_cut(s +i, c), j);
 #include <stdio.h>
 int		main()
 {
-	char	message[] = "Ceci n'est pas un message.";
+	char	message[] = "  Ceci";
 	char cut = ' ';
 	int		i;
 
