@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:11:28 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/16 17:15:15 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/17 11:53:34 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,14 @@ int		next_cut(char const *s, char cut)
 	int		i;
 
 	i = 0;
-	if (s[i] == cut && s[i + 1] == cut)
+
+
+	if (s[i] == cut)
 		i++;
 
 	while (s[i] != cut && s[i] != 0)
 			i++;
 
-printf("next_cut:\n*s = |%s|\ns[%d] : %c = %d\n\n\n", s, i, s[i], s[i]);
 
 	return (i);
 }
@@ -70,11 +71,6 @@ char	**filling_good(char const *s, char **tab, char c)
 
 	while (s[i])
 	{
-printf("filling_good:\n");
-printf("i = %d\n", i);
-printf("j = %d\n", j);
-printf("k = %d\n", k);
-printf("s[i] : %c = %d\n", s[i], s[i]);
 		if (s[i] != c)
 		{
 			tab[j][k] = s[i];
@@ -111,14 +107,12 @@ char	**ft_split(char const *s, char c)
 	char	**tab = NULL;
 	int		i;
 	int		j;
-	int		pre;
+	int		debut;
 
-	i	= 0;
-	j	= 0;
-	pre	= 0;
+	i		= 0;
+	j		= 0;
+	debut	= 0;
 
-printf("ft_split:\n");
-printf("MALLOC %d + 1\n\n\n", nb_words(s, c));
 
 	if (!(tab = malloc(sizeof(char*) * (nb_words(s, c) + 1))))
 		return (NULL);
@@ -132,22 +126,26 @@ printf("MALLOC %d + 1\n\n\n", nb_words(s, c));
 
 	while (s[i] != 0)
 	{
-printf("				s[%d] = %c\n", i, s[i]);
-		if (s[i] == c)
+		if (s[i] == c || s[i] == 0)
 		{
-printf("				_s[%d] = %c\n", i, s[i]);
-printf("MALLOC %d + 1 sur j = %d\n\n\n", next_cut(s + i, c), j);
-			if (!(tab[j] = malloc(sizeof(char) * (i - pre) + 1)))
+			if (!(tab[j] = malloc(sizeof(char) * (i - debut) + 1)))
 			{
-//				freedom(tab, j);
+				freedom(tab, j);
 				return NULL;
 			}
-			pre = i;
+			i++;
+			debut = i;
 			j++;
 		}
-		i++;
+		else
+			i++;
 	}
 
+	if (!(tab[j] = malloc(sizeof(char) * (i - debut) + 1)))
+	{
+		freedom (tab, j);
+		return NULL;
+	}
 	tab = filling_good(s, tab, c);
 
 	return(tab);
@@ -157,8 +155,8 @@ printf("MALLOC %d + 1 sur j = %d\n\n\n", next_cut(s + i, c), j);
 #include <stdio.h>
 int		main()
 {
-	char	message[] = "  Ceci";
-	char cut = ' ';
+	char	message[] = "";
+	char cut = 0;
 	int		i;
 
 	char **truc;
@@ -168,7 +166,7 @@ int		main()
 
 	while (truc[i] != 0)
 	{
-		printf("%s\n", ft_split(message, cut)[i]);
+		printf("%s\n", truc[i]);
 		i++;
 	}
 	return (0);
