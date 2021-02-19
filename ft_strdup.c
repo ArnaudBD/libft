@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 21:12:46 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/11 17:18:42 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/17 15:40:06 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		size;
 	char	*str;

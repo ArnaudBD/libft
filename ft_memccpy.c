@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:25:43 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/15 08:25:45 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/19 12:15:06 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,31 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	unsigned char *destination;
 	unsigned char *source;
-	unsigned char uncharc;
+//	unsigned char uncharc;
 	
 	destination = (unsigned char *)dst;
 	source = (unsigned char *)src;
-	uncharc = (unsigned char)c;
+//	uncharc = (unsigned char)c;
 
-	int i;
+	size_t i;
 
 	i = 0;
 
-	while (i < n && source[i] != uncharc)
+	while (i < n)
 	{
 		destination[i] = source[i];
+	
+		if (source[i] == (unsigned char)c)
+			return ((void  *)&destination[i + 1]);
 		i++;
 	}
-	return(destination);
+	return(NULL);
 }
+/*
+int		main()
+{
+	char	source[] = "petit test";
+	char	destination[] = "000000000000";
+	printf("|%s|\n", ft_memccpy(destination, source, 32, 4));
+}
+*/

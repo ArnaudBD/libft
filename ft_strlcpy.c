@@ -6,14 +6,14 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:27:46 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/15 08:27:48 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/17 14:51:09 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	srcsize;

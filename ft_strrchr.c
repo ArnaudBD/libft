@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:28:35 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/15 08:28:37 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/19 16:55:01 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 	str = (char *)s;
 
 	i = ft_strlen(s);
-	while(i != 0)
+	while(i >= 0)
 	{
 		if(str[i] == charc)
 			return (&str[i]);

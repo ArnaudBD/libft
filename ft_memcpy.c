@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:26:08 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/15 08:26:10 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/18 09:56:51 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t i;
-	char *destination;
-	char *source;
+	unsigned char *destination;
+	unsigned char *source;
+
+	if (dst == 0 && src == 0)
+		return (NULL);
 
 	i = 0;
-	destination = (char *)dst;
-	source = (char *)src;
+	destination = (unsigned char *)dst;
+	source = (unsigned char *)src;
 
-	while(i < n && source[i] != 0)
+	while(i < n)
 	{
 		destination[i] = source[i];
 		i++;

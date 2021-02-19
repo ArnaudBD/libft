@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:24:13 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/15 08:25:05 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/17 15:52:31 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-void	*ft_calloc(int count, int size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	int		i;
 	int		totalmem;
