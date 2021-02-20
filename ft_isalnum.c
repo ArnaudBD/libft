@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:24:18 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/15 08:25:10 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/20 08:34:26 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int		ft_isalnum(int c)
 {
-	if (ft_isdigit(c) == 0 || ft_isalpha(c) == 0)
-		return (0);
+	if (ft_isdigit(c) != 0 || ft_isalpha(c) != 0)
+		return (1);
 
-	return (1);
+	return (0);
 }
