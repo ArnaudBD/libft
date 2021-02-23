@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:26:50 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/15 08:26:52 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/23 15:14:55 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ void	ft_putendl_fd(char *s, int fd)
 	int i;
 
 	i = 0;
-
 	while (s[i] != 0)
 	{
 		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-
 	write(fd, "\n", 1);
 }

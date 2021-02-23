@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:24:09 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/15 08:25:01 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:46:46 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	char *str;
+	size_t	i;
+	char	*str;
 
 	i = 0;
 	str = (char *)s;
-
-	while(i < n)
+	while (i < n)
 	{
 		str[i] = '\0';
 		i++;
 	}
-	return;
+	return ;
 }

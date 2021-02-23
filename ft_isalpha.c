@@ -6,16 +6,16 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:24:23 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/15 08:25:14 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:37:40 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-int		ft_isalpha(int	c)
+int		ft_isalpha(int c)
 {
-	if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	else
 		return (0);
