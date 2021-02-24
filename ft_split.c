@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:11:28 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/23 16:33:39 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/24 11:04:58 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,6 @@ int		nb_words(char const *s, char c)
 	return (nb);
 }
 
-int		next_cut(char const *s, char cut)
-{
-	int		i;
-
-	i = 0;
-	if (s[i] == cut)
-		i++;
-	while (s[i] != cut && s[i] != 0)
-			i++;
-	return (i);
-}
-
 char	**filling_good(char const *s, char **tab, char c)
 {
 	int		i;
@@ -84,19 +72,13 @@ char	**filling_good(char const *s, char **tab, char c)
 	tab[j] = 0;
 	return (tab);
 }
-char	**ft_split(char const *s, char c)
+
+char	**ft_malloc_split(char const *s, char c, char **tab, int i)
 {
-	if (s == 0)
-		return (0);
-	char	**tab = NULL;
-	int		i;
 	int		j;
 	int		first_letter;
 
-	i		= 0;
-	j		= 0;
-	if (!(tab = malloc(sizeof(char*) * (nb_words(s, c) + 1))))
-		return (NULL);
+	j = 0;
 	while (s[i] != 0)
 	{
 		if (s[i] == c || i == 0)
@@ -108,19 +90,40 @@ char	**ft_split(char const *s, char c)
 			first_letter = i;
 			while (s[i] != 0 && s[i] != c)
 				i++;
-				if (!(tab[j] = malloc(sizeof(char) * (i - first_letter) + 1)))
-				{
-					freedom(tab, j);
-					return (NULL);
-				}
+			if (!(tab[j] = malloc(sizeof(char) * (i - first_letter) + 1)))
+			{
+				freedom(tab, j);
+				return (NULL);
+			}
 			j++;
 		}
 	}
-	if (!(tab[j] = malloc(sizeof(char))))
-	{
-		freedom(tab, j);
+	return (tab);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+	int		i;
+	int		j;
+
+	if (s == 0)
+		return (0);
+	i = 0;
+	j = 0;
+	if (!(tab = malloc(sizeof(char*) * (nb_words(s, c) + 1))))
 		return (NULL);
+	tab = ft_malloc_split(s, c, tab, i);
+	if (tab == NULL)
+		return (tab);
+	else
+	{
+		if (!(tab[nb_words(s, c) + 1] = malloc(sizeof(char))))
+		{
+			freedom(tab, j);
+			return (NULL);
+		}
+		tab = filling_good(s, tab, c);
 	}
-	tab = filling_good(s, tab, c);
 	return (tab);
 }

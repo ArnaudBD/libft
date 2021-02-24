@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:27:28 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/23 15:24:02 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/24 07:56:05 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*str;
 
+	if (s1 == 0 || s2 == 0)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	i = 0;
 	j = 0;

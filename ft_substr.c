@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:23:36 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/23 16:25:54 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/24 07:53:32 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		i;
 	size_t	j;
 
+	if (s == 0)
+		return (NULL);
 	i = start;
 	j = 0;
 	if (!(str = malloc(sizeof(char) * len + 1)))

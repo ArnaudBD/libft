@@ -6,14 +6,14 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:26:58 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/23 15:37:20 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/24 11:52:28 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	writing(odg, n, fd)
+void	writing(int odg, int n, int fd)
 {
 	char	c;
 
@@ -24,8 +24,8 @@ void	writing(odg, n, fd)
 		ft_putchar_fd(c, fd);
 		n = n - (n / odg) * odg;
 	}
+	return ;
 }
-
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -51,4 +51,5 @@ void	ft_putnbr_fd(int n, int fd)
 		nb = nb / odg;
 	}
 	writing(odg, n, fd);
+	return ;
 }

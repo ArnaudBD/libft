@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:18:04 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/23 16:25:42 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/24 08:24:22 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+int		ft_start(char const *s1, char const *set)
 {
-int		i;
-int		j;
-int		k;
-int		start;
-char	*str;
+	int		i;
+	int		j;
 
-i = 0;
-j = 0;
+	i = 0;
+	j = 0;
 	while (set[j] != 0)
 	{
 		if (s1[i] != set[j])
@@ -34,7 +31,14 @@ j = 0;
 			j = 0;
 		}
 	}
-	start = i;
+	return (i);
+}
+
+int		ft_end(char const *s1, char const *set)
+{
+	int		i;
+	int		j;
+
 	i = ft_strlen(s1) - 1;
 	j = 0;
 	while (set[j] != 0 && i != 0)
@@ -47,6 +51,21 @@ j = 0;
 			j = 0;
 		}
 	}
+	return (i);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int		i;
+	int		j;
+	int		k;
+	int		start;
+	char	*str;
+
+	if (s1 == 0 || set == 0)
+		return (NULL);
+	start = ft_start(s1, set);
+	i = ft_end(s1, set);
 	if (i == 0)
 		start = i;
 	if (!(str = malloc(sizeof(char) * (i - start) + 1)))
