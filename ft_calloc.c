@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:24:13 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/23 14:48:14 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:29:12 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ void	*ft_calloc(size_t count, size_t size)
 	totalmem = count * size;
 	if (!(str = malloc(sizeof(char) * totalmem)))
 		return (0);
-	while (i <= totalmem)
+	while (totalmem > 0)
 	{
 		str[i] = 0;
 		i++;
+		totalmem--;
 	}
 	return (str);
 }
