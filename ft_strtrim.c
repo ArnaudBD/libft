@@ -6,7 +6,7 @@
 /*   By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 08:18:04 by abiju-du          #+#    #+#             */
-/*   Updated: 2021/02/24 08:24:22 by abiju-du         ###   ########.fr       */
+/*   Updated: 2021/02/25 16:33:54 by abiju-du         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = ft_end(s1, set);
 	if (i == 0)
 		start = i;
-	if (!(str = malloc(sizeof(char) * (i - start) + 1)))
+	if (!(str = malloc(sizeof(char) * (i - start) + 2)))
 		return (NULL);
 	str[0] = s1[start];
 	j = 0;
