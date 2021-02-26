@@ -6,7 +6,7 @@
 #    By: abiju-du <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/12 11:56:07 by abiju-du          #+#    #+#              #
-#    Updated: 2021/02/17 14:28:28 by abiju-du         ###   ########.fr        #
+#    Updated: 2021/02/26 10:51:20 by abiju-du         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,14 @@ CFLAGS	= -Wall -Werror -Wextra
 
 all: $(NAME)
 
-${NAME}: ${OBJS}
-	ar rc ${NAME} ${OBJS}
+$(NAME): ${OBJS}
+	ar rc $(NAME) ${OBJS}
 
 clean:
 	rm -f ${OBJS}
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f $(NAME)
 
 re: fclean all
 
